@@ -1,72 +1,74 @@
 # SmartSnack Office - Sistema de Suministro Automatizado
 
-**SmartSnack Office** es una plataforma integral diseñada para transformar la gestión de beneficios corporativos. El sistema automatiza la cadena de suministro de snacks saludables, conectando la demanda real de los empleados con la logística de inventario mediante una experiencia personalizada impulsada por Inteligencia Artificial.
+**SmartSnack Office** es una plataforma integral diseñada para transformar la gestión de beneficios corporativos. El sistema automatiza la cadena de suministro de snacks saludables, conectando la demanda real de los empleados con la logística de inventario mediante una experiencia premium impulsada por Inteligencia Artificial.
 
 ---
 
-## Equipo de Desarrollo (2026-I)
+## 1. Listado de Funcionalidades Principales
 
-| Integrante | Rol Principal |
-| :--- | :--- |
-| **Juan Sebastián Leguizamón** | Backend Developer |
-| **Juan Roldán** | Backend Developer |
-| **Nelson Pineda** | Frontend Developer |
-| **Pablo Olaya** | Testing & QA |
-| **Daniel Duitama** | DevOps & Integración IA |
-| **Samuel Castañeda** | Project Manager & Documentación |
+El sistema está segmentado en cuatro roles estratégicos y un motor de inteligencia autónomo:
 
----
+### A. Actor: Comprador (Usuario Final)
+*   **Búsqueda Inteligente (TF-IDF):** Localización de snacks mediante términos descriptivos (ej. "energía para la tarde" o "bajo en sodio") en lugar de simples nombres.
+*   **Personalización y Compra:** Selección de productos, adquisición de cajas personalizadas y recepción de recomendaciones basadas en IA.
+*   **Perfil de Salud:** Configuración de restricciones alimenticias (alergias, dietas veganas) y seguimiento de metas nutricionales.
+*   **Feedback de Calidad:** Registro de valoraciones y reseñas que retroalimentan el algoritmo de recomendación.
+*   **Lista de Deseos:** Guardado de productos agotados con notificaciones automáticas de reposición de stock.
 
-## Tecnologías y Frameworks
+### B. Actor: Vendedor
+*   **Gestión de Productos:** Publicación de catálogo con descripciones técnicas, nutricionales y carga de imágenes.
+*   **Inventario en Tiempo Real:** Control dinámico de existencias para evitar discrepancias en las cajas personalizadas.
+*   **Operaciones Comerciales:** Gestión de descuentos, promociones y módulo de atención al cliente para resolver dudas técnicas.
+*   **Logística Inteligente:** Generación de etiquetas de envío y acceso a pronósticos de demanda basados en IA.
 
-| Capa | Tecnología |
-| :--- | :--- |
-| **Lenguaje** | Python |
-| **Backend** | Django + Django REST Framework (DRF) |
-| **Frontend** | Next.js (React) |
-| **Base de datos** | PostgreSQL |
-| **Autenticación** | SimpleJWT |
-| **ML Engine** | Scikit-learn (TF-IDF & Item-based CF) |
-| **Task Queue** | Celery + Redis |
-| **Contenedores** | Docker & Docker Compose |
-| **Gestión** | Jira & GitHub Actions (CI/CD) |
+### C. Actor: Administrador (Gobernanza)
+*   **Gestión Global:** Creación y moderación de categorías, etiquetas y usuarios mediante el ORM de Django.
+*   **Auditoría y Seguridad:** Visualización de flujos financieros, gestión de permisos (RBAC) y revisión de logs de seguridad.
+*   **Mantenimiento Operativo:** Monitoreo de salud del sistema, configuración de parámetros de IA y gestión de respaldos en PostgreSQL.
 
----
+### D. Agente IA (Sistema Inteligente)
+*   **Perfilamiento y Conversión:** Análisis de comportamiento para maximizar el Click-Through Rate (CTR).
+*   **Motor de Recomendación:** Ejecución de modelos *Item-based Collaborative Filtering* para el descubrimiento de productos.
+*   **Detección de Anomalías:** Identificación proactiva de errores en precios o patrones sospechosos de fraude.
+*   **Optimización Semántica:** Reordenamiento de resultados de búsqueda por relevancia real para el usuario.
 
-## Actores del Sistema
-
-*   **Administrador:** Guardián operativo y de cumplimiento. Gestiona categorías, modera contenido, realiza auditorías transaccionales y monitorea la salud del sistema.
-*   **Vendedor:** Motor de la oferta. Gestiona el catálogo de productos, controla el inventario en tiempo real y brinda atención al cliente.
-*   **Comprador:** Actor principal. Disfruta de búsquedas inteligentes, adquisición de cajas personalizadas y configuración de perfiles nutricionales.
-*   **Agente IA:** Sistema autónomo que optimiza la conversión mediante perfiles de usuario, recomendaciones (CTR) y detección de anomalías.
-*   **Pasarela de Pago:** Sistema externo para el procesamiento financiero seguro y confirmación de pedidos vía callbacks.
+### E. Integraciones Externas (Pasarela de Pago)
+*   **Procesamiento Seguro:** Validación y ejecución de transacciones monetarias.
+*   **Automatización Logística:** Envío de callbacks para actualizar estados de pedido y disparar la cadena de suministro.
 
 ---
 
-## Componentes de Inteligencia Artificial
+## 2. Arquitectura y Stack Tecnológico
 
-El sistema implementa una capa de IA con **Scikit-learn** dividida en:
-1.  **Motor de Recomendación:** Filtrado colaborativo basado en ítems para sugerir productos según el historial.
-2.  **Búsqueda Inteligente (TF-IDF):** Localización de snacks mediante términos descriptivos (ej: "energía para la tarde").
-3.  **Detección de Anomalías:** Identificación proactiva de errores en precios o patrones sospechosos de fraude.
-
----
-
-## Calidad de Ingeniería e Infraestructura
-
-*   **Validación de Datos:** Uso de `Pydantic` para garantizar esquemas de datos rigurosos.
-*   **Gestión de DB:** Control de versiones y migraciones con `Alembic`.
-*   **Contenedorización:** Entorno 100% reproducible mediante `Docker`.
-*   **CI/CD:** Flujo automatizado en `GitHub Actions` con ejecución de pruebas obligatorias antes de cada aprobación de despliegue.
-*   **Rendimiento:** Tareas pesadas gestionadas de forma asíncrona con `Celery` para mantener una respuesta fluida en el frontend.
+| Capa | Tecnología | Propósito |
+| :--- | :--- | :--- |
+| **Backend** | `Django + DRF` | API REST robusta y gestión de lógica de negocio. |
+| **Frontend** | `Next.js (React)` | Interfaz de alto impacto visual y experiencia de usuario premium. |
+| **Base de Datos** | `PostgreSQL` | Almacenamiento relacional con control de versiones en `Alembic`. |
+| **IA Engine** | `Scikit-learn` | Modelos de recomendación y procesamiento de lenguaje natural. |
+| **Asincronismo** | `Celery + Redis` | Procesamiento de tareas pesadas en segundo plano. |
+| **Seguridad** | `SimpleJWT` | Autenticación estándar corporativa mediante tokens. |
+| **Infraestructura** | `Docker` | Contenedorización para portabilidad total. |
+| **CI/CD** | `GitHub Actions` | Automatización de pruebas y despliegue continuo. |
 
 ---
 
-## Requerimientos No Funcionales Clave
+## 3. Resumen de Requerimientos No Funcionales (RNF)
 
-*   **Rendimiento:** Búsquedas inteligentes en < 2s; recomendaciones en < 1.5s.
-*   **Seguridad:** Control de acceso basado en roles (RBAC) y comunicación cifrada vía HTTPS/TLS.
-*   **Disponibilidad:** Mínimo 99% en horario laboral corporativo.
-*   **Escalabilidad:** Arquitectura preparada para escalamiento horizontal mediante contenedores.
+*   **Rendimiento:** Búsquedas TF-IDF en < 2s. Recomendaciones en < 1.5s.
+*   **Seguridad:** Protección nativa contra SQLi, XSS y CSRF. Aislamiento de pasarela de pagos.
+*   **Disponibilidad:** Mínimo 99% en horario corporativo (6 AM – 10 PM).
+*   **Escalabilidad:** Arquitectura Docker Compose preparada para escalamiento horizontal.
+*   **Mantenibilidad:** Cobertura de pruebas mínima del 70% en módulos críticos.
+
+---
+
+## 4. Equipo y Roles de Ingeniería
+
+*   **Backend:** Juan Sebastián Leguizamón & Juan Roldán.
+*   **Frontend:** Nelson Pineda.
+*   **Testing / QA:** Pablo Olaya.
+*   **DevOps / Integración IA:** Daniel Duitama.
+*   **Project Manager & Documentación:** Samuel Castañeda.
 
 ---
