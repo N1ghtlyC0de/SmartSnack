@@ -17,7 +17,7 @@
 
 ---
 
-## 🚀 Tecnologías y Frameworks
+## Tecnologías y Frameworks
 
 | Capa | Tecnología |
 | :--- | :--- |
