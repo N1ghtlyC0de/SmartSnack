@@ -1,74 +1,72 @@
-# Análisis Del Proyecto - Django sin cadenas 
+# SmartSnack Office - Sistema de Suministro Automatizado
 
-Este documento resume el análisis de requisitos para el proyecto **Django sin cadenas**, un sistema avanzado de venta de snacks en línea con integración de Inteligencia Artificial.
-
----
-
-## Equipo de Desarrollo
-* **Integrantes:** 
-    * Pablo Esteban Olaya Arias
-    * Juan José Roldán Garay
-    * Sebastian Leguizamon Silva
-    * Samuel David Castañeda Mora
-    * Nelson Enrique Pineda Tellez
-    * Daniel Alejandro Duitama Correa
-* **Periodo:** 2026-I
+**SmartSnack Office** es una plataforma integral diseñada para transformar la gestión de beneficios corporativos. El sistema automatiza la cadena de suministro de snacks saludables, conectando la demanda real de los empleados con la logística de inventario mediante una experiencia personalizada impulsada por Inteligencia Artificial.
 
 ---
 
-## 1. Listado de Funcionalidades Principales
+## Equipo de Desarrollo (2026-I)
 
-El sistema está segmentado en cuatro roles principales y un sistema externo de integración.
-
-### A. Funcionalidades del Comprador (Usuario Final)
-- **Búsqueda Inteligente (TF-IDF):** Localización de snacks mediante términos descriptivos y procesamiento de lenguaje natural.
-- **Personalización y Compra:** Selección de productos, recepción de recomendaciones personalizadas y gestión de feedback.
-- **Salud y Restricciones:** Configuración de perfil con alergias, dietas y seguimiento de metas nutricionales.
-- **Lista de Deseos:** Guardado de productos agotados con sistema de notificación de stock.
-
-### B. Funcionalidades del Vendedor
-- **Gestión de Productos:** Publicación de snacks y control de inventario en tiempo real.
-- **Operaciones Comerciales:** Gestión de descuentos/promociones y módulo de atención al cliente (dudas y reclamos).
-- **Logística y Análisis:** Generación de etiquetas de envío y pronóstico de demanda basado en IA.
-
-### C. Funcionalidades del Administrador
-- **Gestión de Contenido:** Organización de categorías, etiquetas y moderación de productos/usuarios.
-- **Seguridad y Auditoría:** Gestión de roles/permisos (RBAC), auditoría financiera y logs de seguridad.
-- **Mantenimiento:** Monitoreo de salud del sistema, configuración de parámetros de IA y gestión de respaldos en PostgreSQL.
-
-### D. Agente IA y Sistemas Externos
-- **Agente IA:** Perfilamiento de usuario, optimización de conversión, detección de anomalías y limpieza de Tokens (JWT).
-- **Pasarela de Pago:** Procesamiento de transacciones, notificación de estado y gestión de reembolsos.
-
----
-
-## 2. Resumen de Requerimientos No Funcionales (RNF)
-
-| Categoría | Descripción Clave |
+| Integrante | Rol Principal |
 | :--- | :--- |
-| **Rendimiento** | Búsquedas TF-IDF < 2s. Recomendaciones < 1.5s. Tareas asíncronas con **Celery**. |
-| **Seguridad** | Autenticación JWT y HTTPS/TLS. Control RBAC. Protección contra SQLi/XSS/CSRF. |
-| **Disponibilidad** | Mínimo 99% (6 AM – 10 PM). Respaldos manuales y automáticos de DB. |
-| **Escalabilidad** | Arquitectura **Docker / Docker Compose**. Cola de tareas con **Redis**. |
-| **Mantenibilidad** | Migraciones con **Alembic**. Cobertura de pruebas (unit testing) > 70%. |
-| **Compatibilidad** | API REST (DRF) bajo estándar **OpenAPI**. Integración vía callbacks. |
+| **Juan Sebastián Leguizamón** | Backend Developer |
+| **Juan Roldán** | Backend Developer |
+| **Nelson Pineda** | Frontend Developer |
+| **Pablo Olaya** | Testing & QA |
+| **Daniel Duitama** | DevOps & Integración IA |
+| **Samuel Castañeda** | Project Manager & Documentación |
 
 ---
 
-## 3. Historias de Usuario (Ejemplos)
+## 🚀 Tecnologías y Frameworks
 
-| ID | Rol | Título | Objetivo (Para...) |
-| :--- | :--- | :--- | :--- |
-| **HU-001** | Comprador | Búsqueda inteligente | Encontrar rápidamente snacks de interés sin navegar extensamente. |
-| **HU-002** | Comprador | Bloqueo por alergias | Que el sistema impida automáticamente comprar productos no aptos. |
-| **HU-004** | Vendedor | Stock en tiempo real | Mantener el inventario actualizado y evitar discrepancias en ventas. |
-| **HU-006** | Admin | Respaldo preventivo | Asegurar la integridad de la información crítica antes de mantenimientos. |
+| Capa | Tecnología |
+| :--- | :--- |
+| **Lenguaje** | Python |
+| **Backend** | Django + Django REST Framework (DRF) |
+| **Frontend** | Next.js (React) |
+| **Base de datos** | PostgreSQL |
+| **Autenticación** | SimpleJWT |
+| **ML Engine** | Scikit-learn (TF-IDF & Item-based CF) |
+| **Task Queue** | Celery + Redis |
+| **Contenedores** | Docker & Docker Compose |
+| **Gestión** | Jira & GitHub Actions (CI/CD) |
 
 ---
 
-## Stack Tecnológico Sugerido
-- **Backend:** Django / Django REST Framework (DRF)
-- **Base de Datos:** PostgreSQL
-- **Asincronismo:** Celery + Redis
-- **DevOps:** Docker / Docker Compose
-- **IA:** Scikit-learn (TF-IDF) / Agentes personalizados
+## Actores del Sistema
+
+*   **Administrador:** Guardián operativo y de cumplimiento. Gestiona categorías, modera contenido, realiza auditorías transaccionales y monitorea la salud del sistema.
+*   **Vendedor:** Motor de la oferta. Gestiona el catálogo de productos, controla el inventario en tiempo real y brinda atención al cliente.
+*   **Comprador:** Actor principal. Disfruta de búsquedas inteligentes, adquisición de cajas personalizadas y configuración de perfiles nutricionales.
+*   **Agente IA:** Sistema autónomo que optimiza la conversión mediante perfiles de usuario, recomendaciones (CTR) y detección de anomalías.
+*   **Pasarela de Pago:** Sistema externo para el procesamiento financiero seguro y confirmación de pedidos vía callbacks.
+
+---
+
+## Componentes de Inteligencia Artificial
+
+El sistema implementa una capa de IA con **Scikit-learn** dividida en:
+1.  **Motor de Recomendación:** Filtrado colaborativo basado en ítems para sugerir productos según el historial.
+2.  **Búsqueda Inteligente (TF-IDF):** Localización de snacks mediante términos descriptivos (ej: "energía para la tarde").
+3.  **Detección de Anomalías:** Identificación proactiva de errores en precios o patrones sospechosos de fraude.
+
+---
+
+## Calidad de Ingeniería e Infraestructura
+
+*   **Validación de Datos:** Uso de `Pydantic` para garantizar esquemas de datos rigurosos.
+*   **Gestión de DB:** Control de versiones y migraciones con `Alembic`.
+*   **Contenedorización:** Entorno 100% reproducible mediante `Docker`.
+*   **CI/CD:** Flujo automatizado en `GitHub Actions` con ejecución de pruebas obligatorias antes de cada aprobación de despliegue.
+*   **Rendimiento:** Tareas pesadas gestionadas de forma asíncrona con `Celery` para mantener una respuesta fluida en el frontend.
+
+---
+
+## Requerimientos No Funcionales Clave
+
+*   **Rendimiento:** Búsquedas inteligentes en < 2s; recomendaciones en < 1.5s.
+*   **Seguridad:** Control de acceso basado en roles (RBAC) y comunicación cifrada vía HTTPS/TLS.
+*   **Disponibilidad:** Mínimo 99% en horario laboral corporativo.
+*   **Escalabilidad:** Arquitectura preparada para escalamiento horizontal mediante contenedores.
+
+---
