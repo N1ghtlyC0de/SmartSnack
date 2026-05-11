@@ -5,7 +5,8 @@ Este documento resume el análisis de requisitos para el proyecto **Django sin c
 ---
 
 ## Equipo de Desarrollo
-* **Integrantes:** * Pablo Esteban Olaya Arias
+* **Integrantes:** 
+    * Pablo Esteban Olaya Arias
     * Juan José Roldán Garay
     * Sebastian Leguizamon Silva
     * Samuel David Castañeda Mora
