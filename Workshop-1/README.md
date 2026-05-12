@@ -4,8 +4,9 @@
 
 Documentos (disponibles a cambios):
 
-**Documento Propuesta del Proyecto:** https://docs.google.com/document/d/1XKS81kv_aLzMQ9cQPRSm9Q3XFeSGn83BYzZTp2ekLuE/edit?usp=sharing
-**Documento levantamiento de requerimientos:** https://docs.google.com/document/d/17w5CEMyj6_y3XSgpkHI1FiooFWE0UqpjaNi1agNqeOQ/edit?usp=sharing
+Documento Propuesta del Proyecto: https://docs.google.com/document/d/1XKS81kv_aLzMQ9cQPRSm9Q3XFeSGn83BYzZTp2ekLuE/edit?usp=sharing
+
+Documento levantamiento de requerimientos: https://docs.google.com/document/d/17w5CEMyj6_y3XSgpkHI1FiooFWE0UqpjaNi1agNqeOQ/edit?usp=sharing
 
 ---
 
