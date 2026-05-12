@@ -2,6 +2,11 @@
 
 **SmartSnack Office** es una plataforma integral diseñada para transformar la gestión de beneficios corporativos. El sistema automatiza la cadena de suministro de snacks saludables, conectando la demanda real de los empleados con la logística de inventario mediante una experiencia premium impulsada por Inteligencia Artificial.
 
+Documentos (disponibles a cambios):
+
+**Documento Propuesta del Proyecto:** https://docs.google.com/document/d/1XKS81kv_aLzMQ9cQPRSm9Q3XFeSGn83BYzZTp2ekLuE/edit?usp=sharing
+**Documento levantamiento de requerimientos:** https://docs.google.com/document/d/17w5CEMyj6_y3XSgpkHI1FiooFWE0UqpjaNi1agNqeOQ/edit?usp=sharing
+
 ---
 
 ## 1. Listado de Funcionalidades Principales
