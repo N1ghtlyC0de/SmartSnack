@@ -5,9 +5,6 @@
 **Course:** Software Engineering II — 2026-I  
 **Universidad Nacional de Colombia · Faculty of Engineering**
 
-> **Note:** For higher-resolution images of all diagrams and mockups, visit the project repository:  
-> [https://github.com/N1ghtlyC0de/SmartSnack](https://github.com/N1ghtlyC0de/SmartSnack)
-
 ---
 
 ## Table of Contents
@@ -63,8 +60,6 @@ Mockups were created for the main screens of the application. Each wireframe ill
 | 4 | **Wish List** | Buyer | View products saved as "Desired". Each item shows image, name, current price, and availability. Actions: add to cart or remove from list. |
 | 5 | **Checkout / Payment** | Buyer | Confirm cart contents, validate delivery address, and be redirected to the external payment gateway to complete the transaction. |
 
-> For full-detail images, see the [GitHub repository](https://github.com/N1ghtlyC0de/SmartSnack).
-
 ---
 
 ## 3. Business Process Model (BPMN)
@@ -90,8 +85,6 @@ This is the primary business process of the platform. It covers the full buyer j
 7. The buyer receives the order and submits a rating/review.
 8. Throughout the entire flow, the AI Agent collects behavioral events to improve future personalized recommendations.
 
-**Reference:** [https://www.visual-paradigm.com/guide/bpmn/what-is-bpmn/](https://www.visual-paradigm.com/guide/bpmn/what-is-bpmn/)
-
 ---
 
 ## 4. Architecture Diagram
@@ -115,8 +108,6 @@ The architecture follows a layered approach with the following tiers:
 - Async tasks (model retraining, anomaly detection, notifications) run via Celery + Redis without blocking the API.
 - The payment gateway integrates via REST callbacks to `/api/payments/callback`.
 
-**Reference:** [https://www.lucidchart.com/blog/how-to-draw-architectural-diagrams](https://www.lucidchart.com/blog/how-to-draw-architectural-diagrams)
-
 ---
 
 ## 5. Class Diagram (UML)
@@ -135,10 +126,6 @@ The UML class diagram covers the main domain entities, their attributes, methods
 - `Order` aggregates `OrderItem` entries, each referencing a `Product`.
 - `Payment` is associated 1-to-1 with `Order` and communicates with the external `PaymentGateway`.
 - `AIAgent` reads from `UserEvent` and `Product` to produce `Recommendation` instances.
-
-> For the full diagram with all attributes and method signatures, see Image 8 in `IS2_-_Diseño.docx` or the [GitHub repository](https://github.com/N1ghtlyC0de/SmartSnack).
-
-**Reference:** [https://www.uml-diagrams.org/class-diagrams-overview.html](https://www.uml-diagrams.org/class-diagrams-overview.html)
 
 ---
 
@@ -181,8 +168,6 @@ The relational schema is implemented in PostgreSQL and managed through Django's 
 - Order state transitions are validated in application logic before persisting.
 - Stock deduction on payment confirmation runs inside an atomic transaction (`SELECT … FOR UPDATE`) to prevent race conditions.
 
-> For the full ER diagram with all columns, data types, and cardinality notation, see Image 9 in `IS2_-_Diseño.docx` or the [GitHub repository](https://github.com/N1ghtlyC0de/SmartSnack).
-
 ---
 
 ## References
@@ -199,6 +184,3 @@ The relational schema is implemented in PostgreSQL and managed through Django's 
 - PostgreSQL: https://www.postgresql.org/docs/
 
 ---
-
-*All documents are in English as required by the course guidelines.*  
-*Deadline: Thursday, May 31, 2025 at 20:00.*
