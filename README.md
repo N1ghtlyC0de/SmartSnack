@@ -20,7 +20,7 @@
 
 ## 1. CRC Cards
 
-**Location:** `IS2_-_Diseño.docx` (section pending) / inline below
+**Location:** `Workshop-2/Deliverables/CRC_Cards_SmartSnackOffice.pdf`
 
 CRC (Class–Responsibility–Collaborator) cards identify the main classes of the system, what each class is responsible for, and which other classes it collaborates with.
 
