@@ -73,8 +73,8 @@ El sistema está segmentado en cuatro roles estratégicos y un motor de intelige
 
 *   **Backend:** Juan Sebastián Leguizamón & Juan Roldán.
 *   **Frontend:** Nelson Pineda.
-*   **Testing / QA:** Pablo Olaya.
+*   **Testing / QA:** Samuel Castañeda.
 *   **DevOps / Integración IA:** Daniel Duitama.
-*   **Project Manager & Documentación:** Samuel Castañeda.
+*   **Project Manager & Documentación:** Pablo Olaya / Daniel Duitama.
 
 ---
